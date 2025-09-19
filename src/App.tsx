@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import Welcome from "./pages/Welcome";
+import Questionnaire from "./pages/Questionnaire";
 import Dashboard from "./pages/Dashboard";
 import AIChat from "./pages/AIChat";
 import Booking from "./pages/Booking";
@@ -21,15 +23,17 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/dashboard" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="chat" element={<AIChat />} />
             <Route path="booking" element={<Booking />} />
             <Route path="forum" element={<Forum />} />
             <Route path="resources" element={<Resources />} />
             <Route path="mood" element={<MoodTracker />} />
-            <Route path="*" element={<NotFound />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
