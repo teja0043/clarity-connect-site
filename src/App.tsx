@@ -11,6 +11,10 @@ import Forum from "./pages/Forum";
 import Resources from "./pages/Resources";
 import MoodTracker from "./pages/MoodTracker";
 import NotFound from "./pages/NotFound";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import UserManagement from "./pages/admin/UserManagement";
+import ContentModeration from "./pages/admin/ContentModeration";
+import AdminSettings from "./pages/admin/AdminSettings";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,10 @@ const App = () => (
             <Route path="forum" element={<Forum />} />
             <Route path="resources" element={<Resources />} />
             <Route path="mood" element={<MoodTracker />} />
+            <Route path="admin" element={<AdminDashboard />} />
+            <Route path="admin/users" element={<UserManagement />} />
+            <Route path="admin/moderation" element={<ContentModeration />} />
+            <Route path="admin/settings" element={<AdminSettings />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
